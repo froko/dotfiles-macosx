@@ -52,7 +52,7 @@ backup() {
         fi
     done
 
-    for filename in "$HOME/.config/nvim" "$HOME/.vim" "$HOME/.vimrc"; do
+    for filename in "$HOME/.vim" "$HOME/.vimrc"; do
         if [ ! -L "$filename" ]; then
             echo "backing up $filename"
             cp -rf "$filename" "$BACKUP_DIR"
@@ -143,7 +143,7 @@ setup_macos() {
         defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
         echo "show hidden files by default"
-        defaults write com.apple.Finder AppleShowAllFiles -bool false
+        defaults write com.apple.Finder AppleShowAllFiles -bool true
 
         echo "only use UTF-8 in Terminal.app"
         defaults write com.apple.terminal StringEncodings -array 4

@@ -1,0 +1,87 @@
+" Set leader key to space
+let mapleader=" "
+
+" Enable syntax highlight
+syntax on
+
+" Basic settings
+set noswapfile
+set mouse=a
+set encoding=UTF-8
+set number relativenumber
+set termguicolors
+set showmatch
+set cursorline
+set cursorcolumn
+
+" Tab settings
+set smarttab
+set smartindent
+set tabstop=2 softtabstop=2
+set shiftwidth=2
+set expandtab
+
+" Search settings
+set hlsearch	"highlights searches
+set incsearch	"incremental search (searches character by character)
+set ignorecase	"ignores the case of a search
+set smartcase	"only ignores case if there are no capital letters in search (only works after ignorecase has been set)
+
+" Autocompletion
+set wildmode=longest,list,full
+
+" Fix splitting
+set splitbelow splitright
+
+" Remove trailing whitespace on save
+autocmd BufWritePre * %s/\s\+$//e
+
+" Vertically center document when entering insert mode
+autocmd InsertEnter * norm zz
+
+" Standard bindings
+nnoremap gl $
+nnoremap gh 0
+nnoremap gk H
+nnoremap gj L
+nnoremap gt gg
+nnoremap gb G
+inoremap jk <Esc>
+
+" Open split
+nnoremap <leader>h :split<CR>
+nnoremap <leader>v :vsplit<CR>
+
+" Split navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Alias replace all to S
+nnoremap S :%s//gI<Left><Left><Left>
+
+" Disable/Enable auto comment (enabled by default)
+map <leader>c :setlocal formatoptions-=cro<CR>
+map <leader>C :setlocal formatoptions=cro<CR>
+
+" Plugins
+call plug#begin()
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+  Plug 'vim-airline/vim-airline'
+  Plug 'tomasiser/vim-code-dark'
+  Plug 'wuelnerdotexe/vim-astro'
+  Plug 'lambdalisue/fern.vim'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
+
+" Keybindings for plugins
+map <C-p> :FZF<CR>
+
+" Color scheme
+let g:codedark_transparent=1
+let g:airline_theme = 'codedark'
+colorscheme codedark
+
+source ~/.config/vim/cog.vim
