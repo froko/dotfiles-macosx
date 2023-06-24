@@ -78,6 +78,8 @@ call plug#end()
 
 " Keybindings for plugins
 map <C-p> :FZF<CR>
+map <leader>f :Fern .<CR>
+map <leader>F :Fern ..<CR>
 
 " Color scheme
 let g:codedark_transparent=1

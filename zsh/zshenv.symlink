@@ -19,8 +19,8 @@ fpath=(
 
 typeset -aU path
 
-export EDITOR='nvim'
-export GIT_EDITOR='nvim'
+export EDITOR='vim'
+export GIT_EDITOR='vim'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm

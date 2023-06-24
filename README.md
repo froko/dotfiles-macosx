@@ -2,8 +2,6 @@
 
 These dotfiles are based on the great work of Nick Nisi. You can find his version here: https://github.com/nicknisi/dotfiles
 
-For the neovim config I took the version from https://github.com/LunarVim/nvim-basic-ide.
-
 ## Initial setup
 
 The first thing you need to do is to clone this repo into a location of your choosing. For example, if you have a `~/Work` directory where you clone all of your git repos, that's a good choice for this one, too. This repo is setup to not rely on the location of the dotfiles, so you can place it anywhere.
@@ -38,15 +36,10 @@ Usage: install.sh {backup|link|homebrew|macos|all}
 
 Create a backup of the current dotfiles (if any) into `~/.dotfiles-backup/`. This will scan for the existence of every file that is to be symlinked and will move them over to the backup directory. It will also do the same for vim setups, moving some files in the [XDG base directory](http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html), (`~/.config`).
 
-- `~/.config/nvim/` - The home of [neovim](https://neovim.io/) configuration
 - `~/.vim/` - The home of vim configuration
 - `~/.vimrc` - The main init file for vim
 
 ### `link`
-
-```bash
-./install.sh link
-```
 
 The `link` command will create [symbolic links](https://en.wikipedia.org/wiki/Symbolic_link) from the dotfiles directory into the `$HOME` directory, allowing for all of the configuration to _act_ as if it were there without being there, making it easier to maintain the dotfiles in isolation.
 
@@ -95,7 +88,7 @@ This command runs all of the installation tasks described above, in full, with t
 
 The prompt for ZSH is configured in the `zshrc.symlink` file and performs the following operations.
 
-- Sets `EDITOR` to `nvim`
+- Sets `EDITOR` to `vim`
 - Loads any `~/.terminfo` setup
 - Sets `CODE_DIR` to `~/Work`. This can be changed to the location you use to put your git checkouts, and enables fast `cd`-ing into it via the `c` command
 - Recursively searches the `$DOTFILES/zsh` directory for any `.zsh` files and sources them
