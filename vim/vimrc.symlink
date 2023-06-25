@@ -3,6 +3,7 @@ let mapleader=" "
 
 " Enable syntax highlight
 syntax on
+set re=0
 
 " Basic settings
 set noswapfile
@@ -70,10 +71,9 @@ call plug#begin()
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'vim-airline/vim-airline'
-  Plug 'tomasiser/vim-code-dark'
+  Plug 'sainnhe/everforest'
   Plug 'wuelnerdotexe/vim-astro'
   Plug 'lambdalisue/fern.vim'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " Keybindings for plugins
@@ -82,8 +82,7 @@ map <leader>f :Fern .<CR>
 map <leader>F :Fern ..<CR>
 
 " Color scheme
-let g:codedark_transparent=1
-let g:airline_theme = 'codedark'
-colorscheme codedark
+let g:airline_theme = 'everforest'
+colorscheme everforest
+set background=dark
 
-source ~/.config/vim/cog.vim
