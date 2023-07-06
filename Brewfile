@@ -8,6 +8,7 @@ tap "homebrew/bundle"
 tap "homebrew/core"
 
 # Applications
+cask "amethyst" # a better window manager
 cask "appcleaner" # a tool to remove unused files
 cask "brave-browser" # a better browser
 cask "cyberduck" # a better FTP client
@@ -43,6 +44,8 @@ cask "font-symbols-only-nerd-font"
 # CLI tools
 brew "azure-cli" # Azure CLI
 brew "exa" # ls alternative
+brew "fd" # find alternative
+brew "fzf" # fuzzy finder
 brew "gh" # GitHub CLI
 brew "git" # Git version control (latest version)
 brew "htop" # a top alternative
@@ -51,3 +54,4 @@ brew "nvm" # Node version manager
 brew "python" # python (latst)
 brew "ripgrep" # grep alternative
 brew "tmux" # terminal multiplexer
+brew "treesitter" # syntax highlighting
