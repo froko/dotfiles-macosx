@@ -23,10 +23,10 @@ set shiftwidth=2
 set expandtab
 
 " Search settings
-set hlsearch	"highlights searches
-set incsearch	"incremental search (searches character by character)
-set ignorecase	"ignores the case of a search
-set smartcase	"only ignores case if there are no capital letters in search (only works after ignorecase has been set)
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
 
 " Autocompletion
 set wildmode=longest,list,full
@@ -37,9 +37,6 @@ set splitbelow splitright
 " Remove trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
 
-" Vertically center document when entering insert mode
-autocmd InsertEnter * norm zz
-
 " Standard bindings
 nnoremap gl $
 nnoremap gh 0
@@ -48,6 +45,13 @@ nnoremap gj L
 nnoremap gt gg
 nnoremap gb G
 inoremap jk <Esc>
+
+" Buffer navigation
+nnoremap tk :bnext<CR>
+nnoremap tj :bprev<CR>
+nnoremap th :bfirst<CR>
+nnoremap tl :blast<CR>
+nnoremap td :bdelete<CR>
 
 " Open split
 nnoremap <leader>h :split<CR>
@@ -62,17 +66,12 @@ map <C-l> <C-w>l
 " Alias replace all to S
 nnoremap S :%s//gI<Left><Left><Left>
 
-" Disable/Enable auto comment (enabled by default)
-map <leader>c :setlocal formatoptions-=cro<CR>
-map <leader>C :setlocal formatoptions=cro<CR>
-
 " Plugins
 call plug#begin()
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'vim-airline/vim-airline'
-  Plug 'sainnhe/everforest'
-  Plug 'wuelnerdotexe/vim-astro'
+  Plug 'catppuccin/vim', { 'as': 'catppuccin' }
   Plug 'lambdalisue/fern.vim'
 call plug#end()
 
@@ -82,7 +81,6 @@ map <leader>f :Fern .<CR>
 map <leader>F :Fern ..<CR>
 
 " Color scheme
-let g:airline_theme = 'everforest'
-colorscheme everforest
-set background=dark
+let g:airline_theme = 'catppuccin_mocha'
+colorscheme catppuccin_mocha
 
