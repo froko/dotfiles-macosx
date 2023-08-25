@@ -12,17 +12,7 @@ local config = {
       action = wezterm.action.ToggleFullScreen,
     }
   },
-  window_background_gradient = {
-    orientation = "Horizontal",
-    colors = {
-      "#00000C",
-      "#000026",
-      "#00000C"
-     },
-    interpolation = "CatmullRom",
-    blend = "Rgb",
-    noise = 0
-   }
+  color_scheme = "Catppuccin Mocha"
 }
 
 return config
