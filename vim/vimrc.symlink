@@ -6,6 +6,7 @@ syntax on
 set re=0
 
 " Basic settings
+set nocompatible
 set noswapfile
 set mouse=a
 set encoding=UTF-8
@@ -29,7 +30,13 @@ set ignorecase
 set smartcase
 
 " Autocompletion
+set wildmenu
 set wildmode=longest,list,full
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
 
 " Fix splitting
 set splitbelow splitright
@@ -82,5 +89,6 @@ map <leader>F :Fern ..<CR>
 
 " Color scheme
 let g:airline_theme = 'catppuccin_mocha'
+let g:airline#extensions#tabline#enabled = 1
 colorscheme catppuccin_mocha
 
