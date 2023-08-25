@@ -49,8 +49,6 @@ nnoremap gl $
 nnoremap gh 0
 nnoremap gk H
 nnoremap gj L
-nnoremap gt gg
-nnoremap gb G
 inoremap jk <Esc>
 
 " Buffer navigation
@@ -84,8 +82,10 @@ call plug#end()
 
 " Keybindings for plugins
 map <C-p> :FZF<CR>
-map <leader>f :Fern .<CR>
-map <leader>F :Fern ..<CR>
+map <leader>f :Fern . -drawer -reveal=% -toggle -width=35<CR>
+
+" Fern configuration
+let g:fern#default_hidden = 1
 
 " Color scheme
 let g:airline_theme = 'catppuccin_mocha'
