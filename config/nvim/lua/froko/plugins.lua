@@ -50,6 +50,31 @@ local plugins = {
     },
   },
   {
+    "nvim-treesitter/nvim-treesitter"
+  },
+  {
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v1.x',
+    dependencies = {
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},             -- Required
+      {'williamboman/mason.nvim'},           -- Optional
+      {'williamboman/mason-lspconfig.nvim'}, -- Optional
+
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},         -- Required
+      {'hrsh7th/cmp-nvim-lsp'},     -- Required
+      {'hrsh7th/cmp-buffer'},       -- Optional
+      {'hrsh7th/cmp-path'},         -- Optional
+
+      -- Snippets
+      {'L3MON4D3/LuaSnip'},         -- Required
+
+      -- Autoformat
+      {'lukas-reineke/lsp-format.nvim', config = true}
+    }
+  },
+  {
     "folke/which-key.nvim",
     event = "VeryLazy",
     init = function()
@@ -76,3 +101,6 @@ vim.opt.runtimepath:prepend(lazypath)
 require("lazy").setup(plugins)
 require("froko.colorscheme")
 require("froko.lualine")
+require("froko.treesitter")
+require("froko.lsp")
+require("froko.whichkey")
